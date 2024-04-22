@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kolekcje.CollectionDetailPage"
+             Title="CollectionDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout x:Name="CollectionItemsStackLayout">
+                    <ListView x:Name="CollectionItemsListView">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding}">
+                                    <TextCell.ContextActions>
+                                        <MenuItem Clicked="RemoveItem_Clicked" Text="Usuń" />
+                                    </TextCell.ContextActions>
+                                </TextCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+            <Button Text="Dodaj element" Clicked="AddItem_Clicked"/>
+            <Button Text="Usuń element" Clicked="RemoveItem_Clicked"/>
+            <Button Text="Edytuj zaznaczony" Clicked="EditSelected_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

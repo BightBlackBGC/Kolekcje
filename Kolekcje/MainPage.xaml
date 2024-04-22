@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kolekcje.MainPage">
+
+    <StackLayout Padding="20">
+        <ListView x:Name="CollectionListView" ItemTapped="CollectionListView_ItemTapped">
+            <ListView.ItemTemplate Margin="0,0,0,10" HeightRequest="300">
+                <DataTemplate >
+                    <TextCell Text="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Dodaj kolekcję" Clicked="AddCollection_Clicked" HorizontalOptions="Center"/>
+    </StackLayout>
+
+</ContentPage>
